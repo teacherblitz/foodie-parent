@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="foodie-entity" />
         <module name="foodie-api" />
         <module name="foodie-common" />
-        <module name="foodie-dao" />
         <module name="foodie-service" />
-        <module name="foodie-entity" />
+        <module name="foodie-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
