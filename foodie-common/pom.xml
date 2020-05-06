@@ -13,4 +13,8 @@
     <!-- 可省略，打包类型默认是jar -->
     <packaging>jar</packaging>
 
+    <dependencies>
+
+    </dependencies>
+
 </project>
