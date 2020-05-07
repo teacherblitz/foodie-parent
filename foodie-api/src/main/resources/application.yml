@@ -4,13 +4,18 @@ server:
   tomcat:
     uri-encoding: UTF-8
   max-http-header-size: 80KB
+  # Tomcat 访问前缀
+  servlet:
+    context-path: /foodie-api
 
-# 配置数据源信息
 spring:
+  # 应用名称
   application:
     name: foodie-api
+  # 默认激活配置文件后缀
   profiles:
     active: dev
+  # 配置数据源信息
   datasource:                                            # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource             # 数据源类型：HikariCP
     driver-class-name: com.mysql.cj.jdbc.Driver          # mysql驱动

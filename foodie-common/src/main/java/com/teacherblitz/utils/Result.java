@@ -10,14 +10,13 @@ import lombok.Setter;
  * @since 2020/5/4
  */
 @Getter
-@Setter
 @AllArgsConstructor
 public class Result {
 
     /**
      * 状态码
      */
-    private int status;
+    private String code;
 
     /**
      * 状态描述
@@ -30,7 +29,7 @@ public class Result {
     private Object data;
 
     public Result ok(Object data){
-        return new Result(200,"ok",data);
+        return new Result(ErrorCodeEnum.SUCCESS.getCode(),ErrorCodeEnum.SUCCESS.getMsg(),data);
     }
 
 }
