@@ -35,7 +35,7 @@ public class Result {
      * @param data
      * @return
      */
-    public Result ok(Object data){
+    public static Result ok(Object data){
         return new Result(ErrorCodeEnum.SUCCESS.getCode(),ErrorCodeEnum.SUCCESS.getMsg(),data);
     }
 
@@ -44,7 +44,7 @@ public class Result {
      * @param data
      * @return
      */
-    public Result error(Object data){
+    public static Result error(Object data){
         return new Result(ErrorCodeEnum.USER_CLIENT_ERROR.getCode(),ErrorCodeEnum.USER_CLIENT_ERROR.getMsg(),data);
     }
 
