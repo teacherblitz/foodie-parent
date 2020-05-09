@@ -1,6 +1,8 @@
 package com.teacherblitz.utils;
 
 import com.teacherblitz.enums.ErrorCodeEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,21 +15,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@ApiModel(value = "Result",description = "统一结果返回")
 public class Result {
 
     /**
      * 状态码
      */
+    @ApiModelProperty(name = "code", value = "状态码")
     private String code;
 
     /**
      * 状态描述
      */
+    @ApiModelProperty(name = "msg", value = "状态描述")
     private String msg;
 
     /**
      * 返回对象
      */
+    @ApiModelProperty(name = "data", value = "返回对象")
     private Object data;
 
     /**
@@ -49,3 +55,4 @@ public class Result {
     }
 
 }
+
