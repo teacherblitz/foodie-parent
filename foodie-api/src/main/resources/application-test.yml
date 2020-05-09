@@ -1,0 +1,6 @@
+spring:
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://47.103.88.52:3306/foodie-shop?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root

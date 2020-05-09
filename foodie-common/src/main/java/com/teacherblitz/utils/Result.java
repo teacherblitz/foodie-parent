@@ -26,7 +26,7 @@ public class Result {
     private String msg;
 
     /**
-     * 结果集
+     * 返回对象
      */
     private Object data;
 
@@ -45,7 +45,7 @@ public class Result {
      * @return
      */
     public static Result error(Object data){
-        return new Result(ErrorCodeEnum.USER_CLIENT_ERROR.getCode(),ErrorCodeEnum.USER_CLIENT_ERROR.getMsg(),data);
+        return new Result(ErrorCodeEnum.ERROR.getCode(),ErrorCodeEnum.ERROR.getMsg(),data);
     }
 
 }

@@ -14,14 +14,11 @@ spring:
     name: foodie-api
   # 默认激活配置文件后缀
   profiles:
-    active: dev
+    active: test
   # 配置数据源信息
   datasource:                                            # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource             # 数据源类型：HikariCP
     driver-class-name: com.mysql.cj.jdbc.Driver          # mysql驱动
-    url: jdbc:mysql://localhost:3306/foodie-shop?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-    username: root
-    password: root
     hikari:
       connection-timeout: 30000       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 默认:30秒
       minimum-idle: 5                 # 最小连接数

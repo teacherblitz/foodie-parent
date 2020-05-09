@@ -2,7 +2,6 @@ package com.teacherblitz.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 错误码枚举
