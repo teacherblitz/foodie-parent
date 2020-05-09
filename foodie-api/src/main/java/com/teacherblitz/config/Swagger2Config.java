@@ -24,6 +24,7 @@ public class Swagger2Config {
     public Docket initSwagger2Api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(this.apiInfo())
+                .groupName("foodie-api")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.teacherblitz.controller"))
                 .paths(PathSelectors.any())
