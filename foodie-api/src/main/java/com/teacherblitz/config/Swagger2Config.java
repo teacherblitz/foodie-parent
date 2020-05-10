@@ -1,5 +1,6 @@
 package com.teacherblitz.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -20,11 +21,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2Config {
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     @Bean
     public Docket initSwagger2Api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(this.apiInfo())
-                .groupName("foodie-api")
+                .groupName(applicationName)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.teacherblitz.controller"))
                 .paths(PathSelectors.any())
