@@ -14,4 +14,44 @@
     <result column="cat_image" property="catImage" jdbcType="VARCHAR" />
     <result column="bg_color" property="bgColor" jdbcType="VARCHAR" />
   </resultMap>
+
+  <!-- 三级分类结果映射 -->
+  <resultMap id="categoryVO" type="com.teacherblitz.entity.vo.CategoryVO">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="father_id" property="fatherId" jdbcType="INTEGER" />
+    <result column="cat_image" property="catImage" jdbcType="VARCHAR" />
+    <result column="bg_color" property="bgColor" jdbcType="VARCHAR" />
+    <collection property="subCategoryVO" javaType="java.util.ArrayList" ofType="com.teacherblitz.entity.vo.SubCategoryVO">
+        <id column="cId" property="cId" jdbcType="INTEGER" />
+        <result column="cName" property="cName" jdbcType="VARCHAR" />
+        <result column="cType" property="cType" jdbcType="INTEGER" />
+        <result column="cFatherId" property="cFatherId" jdbcType="INTEGER" />
+        <result column="cCatImage" property="cCatImage" jdbcType="VARCHAR" />
+        <result column="cBgColor" property="cBgColor" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+
+  <select id="queryPageCategory" parameterType="com.teacherblitz.entity.bo.CategoryBO"
+          resultMap="categoryVO">
+        SELECT
+            f.id,
+            f.name,
+            f.type,
+            f.father_id fatherId,
+            f.cat_image catImage,
+            f.bg_color bgColor,
+            s.id cId,
+            s.name cName,
+            s.type cType,
+            s.father_id cFatherId,
+            s.cat_image cCatImage,
+            s.bg_color cBgColor
+        FROM
+            category f
+            LEFT JOIN category s ON f.id = s.father_id
+        WHERE
+            f.father_id = #{id}
+  </select>
 </mapper>
