@@ -14,9 +14,15 @@ import java.util.List;
 public interface CategoryService {
 
     /**
-     * 查询种类信息
-     * @param categoryBO
+     * 查询三级分类
+     * @param categoryBO （id=父级分类id）
      * @return
      */
     List<CategoryVO> queryPageCategory(CategoryBO categoryBO);
+
+    /**
+     * 查询一级分类
+     * @return
+     */
+    List<Category> queryCategoryList();
 }

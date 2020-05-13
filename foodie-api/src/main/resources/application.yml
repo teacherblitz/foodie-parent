@@ -49,4 +49,4 @@ mapper:
 # 分页插件配置
 pagehelper:
   helper-dialect: mysql
-  reasonable: true
+  supportMethodsArguments: true

@@ -13,7 +13,7 @@ import lombok.Getter;
 public enum ErrorCodeEnum {
 
     SUCCESS("00000","成功"),
-    ERROR("0000", "失败"),
+    ERROR("0001", "失败"),
     USER_CLIENT_ERROR("A0001","用户端错误"),
     USER_REGISTER_ERROR("A0100","用户注册错误"),
     USER_NOT_PRIVATE_AGREEMENT("A0101","用户未同意隐私协议");

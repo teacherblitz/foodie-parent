@@ -13,7 +13,6 @@ public class ThreadTest {
         RunnableTest runnableTest = new RunnableTest();
         Thread thread = new Thread(runnableTest,"sss");
         thread.start();
-
     }
 
     static class RunnableTest implements Runnable {
