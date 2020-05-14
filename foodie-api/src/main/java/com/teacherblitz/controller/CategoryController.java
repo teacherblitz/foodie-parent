@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,21 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @author: teacherblitz
  * @since: 2020/5/12
  */
-@Api(tags = "分类controller")
+@Api(tags = "分类模块")
 @RestController
+@RequestMapping("/v1/category/")
 @RequiredArgsConstructor
 public class CategoryController {
 
     private final CategoryService categoryService;
 
     @ApiOperation(value = "一级分类")
-    @PostMapping(value = "/queryCateGory")
+    @PostMapping(value = "/top_list")
     public Result queryCateGory(){
         return Result.ok(categoryService.queryCategoryList());
     }
 
-    @ApiOperation(value = "根据BO获取三分类")
-    @PostMapping(value = "/getSubCategory")
+    @ApiOperation(value = "三级分类")
+    @PostMapping(value = "/sub_list")
     public Result queryPageCategory(@RequestBody @Validated CategoryBO categoryBO){
         return Result.ok(categoryService.queryPageCategory(categoryBO));
     }

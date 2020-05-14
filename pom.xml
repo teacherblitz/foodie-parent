@@ -136,11 +136,9 @@
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <encoding>${maven.compiler.encoding}</encoding>
+                    <!-- 可避免执行打包时执行测试，否则需要加入skip参数 -->
+                    <skip>true</skip>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
