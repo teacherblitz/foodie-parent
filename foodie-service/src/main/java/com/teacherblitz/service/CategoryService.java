@@ -1,6 +1,5 @@
 package com.teacherblitz.service;
 
-import com.github.pagehelper.PageInfo;
 import com.teacherblitz.entity.Category;
 import com.teacherblitz.entity.bo.CategoryBO;
 import com.teacherblitz.entity.vo.CategoryVO;
