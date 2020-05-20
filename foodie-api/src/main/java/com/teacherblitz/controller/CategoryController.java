@@ -6,11 +6,12 @@ import com.teacherblitz.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 /**
  * 分类 controller
@@ -33,7 +34,7 @@ public class CategoryController {
 
     @ApiOperation(value = "三级分类")
     @PostMapping(value = "/sub_list")
-    public Result queryPageCategory(@RequestBody @Validated CategoryBO categoryBO){
+    public Result queryPageCategory(@RequestBody @Valid CategoryBO categoryBO){
         return Result.ok(categoryService.queryPageCategory(categoryBO));
     }
 }
