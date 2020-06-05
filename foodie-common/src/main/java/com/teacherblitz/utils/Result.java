@@ -30,8 +30,8 @@ public class Result<T> {
      * @param data
      * @return
      */
-    public static Result ok(Object data){
-        return new Result(ErrorCodeEnum.SUCCESS.getCode(),ErrorCodeEnum.SUCCESS.getMsg(),data);
+    public static <T> Result<T> ok(T data){
+        return new Result<>(ErrorCodeEnum.SUCCESS.getCode(), ErrorCodeEnum.SUCCESS.getMsg(), data);
     }
 
     /**
@@ -39,8 +39,8 @@ public class Result<T> {
      * @param data
      * @return
      */
-    public static Result error(Object data){
-        return new Result(ErrorCodeEnum.ERROR.getCode(),ErrorCodeEnum.ERROR.getMsg(),data);
+    public static <T> Result<T> error(T data){
+        return new Result<>(ErrorCodeEnum.ERROR.getCode(), ErrorCodeEnum.ERROR.getMsg(), data);
     }
 
 }
