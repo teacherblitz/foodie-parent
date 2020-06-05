@@ -3,38 +3,27 @@ package com.teacherblitz.utils;
 import com.teacherblitz.enums.ErrorCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * 统一结果返回
  * @author teacherblitz
  * @since 2020/5/4
  */
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
 @ApiModel(value = "Result",description = "统一结果返回")
-public class Result {
+public class Result<T> {
 
-    /**
-     * 状态码
-     */
-    @ApiModelProperty(name = "code", value = "状态码")
+    @ApiModelProperty(value = "响应码")
     private String code;
 
-    /**
-     * 状态描述
-     */
-    @ApiModelProperty(name = "msg", value = "状态描述")
+    @ApiModelProperty(value = "响应信息")
     private String msg;
 
-    /**
-     * 返回对象
-     */
-    @ApiModelProperty(name = "data", value = "返回对象")
-    private Object data;
+    @ApiModelProperty(value = "数据")
+    private T data;
 
     /**
      * 请求成功

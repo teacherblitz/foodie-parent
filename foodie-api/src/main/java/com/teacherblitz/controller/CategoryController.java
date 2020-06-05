@@ -1,6 +1,8 @@
 package com.teacherblitz.controller;
 
+import com.teacherblitz.entity.Category;
 import com.teacherblitz.entity.bo.CategoryBO;
+import com.teacherblitz.entity.vo.CategoryVO;
 import com.teacherblitz.service.CategoryService;
 import com.teacherblitz.utils.Result;
 import io.swagger.annotations.Api;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 分类 controller
@@ -28,13 +31,13 @@ public class CategoryController {
 
     @ApiOperation(value = "一级分类")
     @PostMapping(value = "/top_list")
-    public Result queryCateGory(){
+    public Result<List<Category>> queryCateGory(){
         return Result.ok(categoryService.queryCategoryList());
     }
 
     @ApiOperation(value = "三级分类")
     @PostMapping(value = "/sub_list")
-    public Result queryPageCategory(@RequestBody @Valid CategoryBO categoryBO){
+    public Result<List<CategoryVO>> queryPageCategory(@RequestBody @Valid CategoryBO categoryBO){
         return Result.ok(categoryService.queryPageCategory(categoryBO));
     }
 }
