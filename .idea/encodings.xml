@@ -6,8 +6,7 @@
     <file url="file://$PROJECT_DIR$/foodie-dao/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/foodie-entity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/foodie-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/foodie-sso/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

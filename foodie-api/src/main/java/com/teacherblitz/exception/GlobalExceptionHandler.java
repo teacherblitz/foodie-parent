@@ -1,5 +1,6 @@
 package com.teacherblitz.exception;
 
+import com.teacherblitz.bean.CustomException;
 import com.teacherblitz.utils.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -28,6 +29,9 @@ public class GlobalExceptionHandler {
         if(exception instanceof MethodArgumentNotValidException){
             log.info("【系统异常】：方法参数验证异常了...");
             return Result.error(((MethodArgumentNotValidException) exception).getBindingResult().getFieldError().getDefaultMessage());
+        }else if(exception instanceof CustomException){
+            CustomException ex = (CustomException)exception;
+            return Result.buildError(ex.getErrorCodeEnum());
         }
         exception.printStackTrace();
         return Result.error(exception.getMessage());

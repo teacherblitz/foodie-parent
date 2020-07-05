@@ -1,6 +1,8 @@
 package com.teacherblitz.service.impl;
 
+import com.teacherblitz.bean.CustomException;
 import com.teacherblitz.entity.Stu;
+import com.teacherblitz.enums.ErrorCodeEnum;
 import com.teacherblitz.mapper.StuMapper;
 import com.teacherblitz.service.StuService;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -24,6 +27,7 @@ public class StuServiceImpl implements StuService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public Stu selectStuById(int id) {
+        Optional.ofNullable(null).orElseThrow(() -> new CustomException(ErrorCodeEnum.USER_CLIENT_ERROR));
         return stuMapper.selectByPrimaryKey(id);
     }
 

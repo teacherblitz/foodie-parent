@@ -17,6 +17,7 @@
         <module>foodie-service</module>
         <module>foodie-dao</module>
         <module>foodie-entity</module>
+        <module>foodie-sso</module>
     </modules>
 
     <parent>

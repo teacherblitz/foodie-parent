@@ -43,5 +43,8 @@ public class Result<T> {
         return new Result<>(ErrorCodeEnum.ERROR.getCode(), ErrorCodeEnum.ERROR.getMsg(), data);
     }
 
+    public static <T> Result<T> buildError(ErrorCodeEnum errorCodeEnum){
+        return new Result<>(errorCodeEnum.getCode(), errorCodeEnum.getMsg(), null);
+    }
 }
 

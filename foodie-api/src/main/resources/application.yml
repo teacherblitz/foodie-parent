@@ -14,7 +14,7 @@ spring:
     name: foodie-api
   # 默认激活配置文件后缀
   profiles:
-    active: test
+    active: dev
   # 配置数据源信息
   datasource:                                            # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource             # 数据源类型：HikariCP
